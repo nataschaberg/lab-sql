@@ -23,6 +23,8 @@ The ERD is pictured below - not all tables are shown, but many of the key fields
   - 5.2 Find out how many employees staff does the company have? 
   - 5.3 Return a list of employee first names only?
 
+<br><br>
+
 # Lab | SQL Queries 2
 
 <br><br>
