@@ -16,7 +16,7 @@ select avg(length) as avg_duration from film;
 
 select avg(length) as avg_duration from film;
 
-select avg(length), concat(floor(avg(length)/60), ':', date_format(cast(avg(length)%60 as time), '%s')) as length_c from film;
+select avg(length), concat(floor(avg(length)/60), ':', date_format(cast(avg(length)%60 as time), '%s')) as length_time from film;
 
 select count(film_id) from film where length > 180;
 

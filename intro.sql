@@ -8,10 +8,8 @@ select title from film;
 
 select name as language from language;
 
-select * from store;
--- two store id's thus two stores in total
+select count(store_id) from store;
 
-select * from staff;
--- two employees listed under staff table
+select count(staff_id) from staff;
 
 select first_name from staff;
