@@ -1,4 +1,4 @@
-use saklia;
+use sakila;
 
 select * from actor where upper(first_name) = upper('Scarlett');
 
