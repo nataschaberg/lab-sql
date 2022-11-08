@@ -30,5 +30,5 @@ select *,
 select max(rental_date) as last_month_activity from rental;
 -- 2006-02-14 15:16:03
 
-select * from rental
+select count(rental_id) from rental
 	where date_format(convert(rental_date, date), '%Y-%m-%d') >= '2006-02-01';
