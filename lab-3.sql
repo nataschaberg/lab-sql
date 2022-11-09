@@ -1,34 +1,41 @@
-use sakila;
+USE sakila;
 
-select count(distinct(last_name)) from actor;
+SELECT COUNT(DISTINCT(last_name))
+  FROM actor;
 
-select count(distinct(language_id)) from film;
+SELECT COUNT(DISTINCT(language_id)) 
+  FROM film;
 
-select count(film_id) from film
-	 where rating = 'PG-13';
+SELECT COUNT(film_id)
+  FROM film
+ WHERE rating = 'PG-13';
      
-select * from film
-	order by length desc
-    limit 10;
+SELECT * 
+  FROM film
+ ORDER BY length DESC
+LIMIT 10;
     
-select min(rental_date) as start, max(rental_date) as stop, datediff(max(rental_date), min(rental_date)) as days_opened  from rental;
+SELECT MIN(rental_date) AS start, MAX(rental_date) AS stop, datediff(max(rental_date), min(rental_date)) AS days_opened
+  FROM rental;
 
-select *,
-	date_format(convert(rental_date,date), '%M') as rental_date_month,
-    date_format(convert(rental_date, date), '%d') as rental_date_weekday
-    from rental
-	limit 20;
+SELECT *,
+	   DATE_FORMAT(CONVERT(rental_date, DATE), '%M') AS rental_date_month,
+       DATE_FORMAT(CONVERT(rental_date, DATE), '%d') AS rental_date_weekday
+  FROM rental
+ LIMIT 20;
 
-select *,
-	case
-		when date_format(convert(rental_date,date), '%w') = 6 then 'weekend'
-        when date_format(convert(rental_date,date), '%w') = 0 then 'weekend'
-		else 'weekday'
-	end as date_type
-    from rental;
+SELECT *,
+	   (CASE
+		  WHEN DATE_FORMAT(CONVERT(rental_date, DATE), '%w') = 6 THEN 'weekend'
+          WHEN DATE_FORMAT(CONVERT(rental_date, DATE), '%w') = 0 THEN 'weekend'
+		  ELSE 'weekday'
+	    END) AS date_type
+  FROM rental;
 
-select max(rental_date) as last_month_activity from rental;
+SELECT MAX(rental_date) AS last_month_activity
+  FROM rental;
 -- 2006-02-14 15:16:03
 
-select count(rental_id) from rental
-	where date_format(convert(rental_date, date), '%Y-%m-%d') >= '2006-02-01';
+SELECT COUNT(rental_id)
+  FROM rental
+ WHERE DATE_FORMAT(CONVERT(rental_date, DATE), '%Y-%m-%d') >= '2006-02-01';
