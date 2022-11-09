@@ -15,7 +15,7 @@ SELECT *
  ORDER BY length DESC
 LIMIT 10;
     
-SELECT MIN(rental_date) AS start, MAX(rental_date) AS stop, datediff(max(rental_date), min(rental_date)) AS days_opened
+SELECT MIN(rental_date) AS start, MAX(rental_date) AS stop, DATEDIFF(MAX(rental_date), MIN(rental_date)) AS days_opened
   FROM rental;
 
 SELECT *,
