@@ -1,8 +1,11 @@
 USE sakila;
 
 -- 1
-SELECT DISTINCT last_name, first_name
-  FROM actor;
+SELECT last_name, COUNT(*) AS num_of_lastnames
+  FROM actor
+ GROUP BY last_name
+HAVING num_of_lastnames = 1
+ ORDER BY num_of_lastnames DESC;
 
 -- 2
 SELECT last_name, COUNT(*) AS num_of_lastnames
