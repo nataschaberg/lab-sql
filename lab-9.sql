@@ -54,4 +54,4 @@ SELECT customer_id, COUNT(*) As total_rentals
  GROUP BY customer_id
  ORDER BY total_rentals DESC;
  
--- for python logic see: lab-p.ipynb
+-- for python logic see: lab-9.ipynb
